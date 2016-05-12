@@ -1,0 +1,36 @@
+﻿font-awesome gir 403 :( kjør lokalt istedet. virket plutselig igejen.
+Fiks superfish - får den ikke til å virke :( -> fikset
+
+Jævla nav-menu -> menu -> fikset.
+
+fiks searchbar bug antakeligvis under
+.search-box .search-field 
+
+Vurder å fjern kategori fra content.php evt  $categories_list fra template-tag.php
+ved feks $1, så representerer det neste KOMMA separerte element/metode/ting
+<nav class="navigation post-navigation">   nav_next og prev er tydeligvis inni wp-includes/link-template.php.. Fikset :D
+
+------HUSK PÅ:-----
+
+-HEADER:
+-endre tekst i WP backend under settings/general.
+endre bakgrunn/ramme under styles.css -> .site-branding og .title-box
+hvis ikke bakgrunnsbilde -> vanlig blå bakgrunn fra content_sidebar.css
+
+-POSTS
+kategorier, meta, og denslags kan edites/fjernes fra template-parts/content.php
+
+-PAGES:
+
+-NAV:
+bakgrunn fra .main-navigation.. Liste elementene fra .main-navigation li OSV
+rediger minimenytekst fra header.php under nav id="site-navigation"
+Menyer legges til i template-tags.php og plasseres i feks header.php
+
+
+-FOOTER:
+bakgrunn fra .site-footer i styles.css
+
+
+-Widgets:
+widgets kan legges til i functions.php og legges til med sidebar-NOE.php under <div id="supplementary">
