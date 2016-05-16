@@ -159,7 +159,7 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 1.5em;
+	/*margin: 0 1.5em; arvet fra denne. gjorde at blockquotes blei tabbet inn */
 }
 address {
 	margin: 0 0 1.5em;
@@ -719,6 +719,19 @@ a:active {
 	margin: 0 auto;
 }
 
+/* Alignment responsive */
+@media screen and (min-width: 1320px) {
+	.alignleft {
+		margin-left: -160px;
+	}
+}
+
+@media screen and (min-width: 1820px) {
+	.alignright {
+		margin-right: -160px;
+	}
+}
+
 /*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/
@@ -1009,7 +1022,6 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
-
 /* Typography */
 .entry-title {
 	margin: 0 0 2rem;
@@ -1024,7 +1036,6 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 .entry-content a {
 	text-decoration: underline;
 }
-/*Fontstørrelser basert på skjermstørrelse  */
 .entry-content h1,
 .entry-content h2,
 .entry-content h3,
@@ -1075,6 +1086,7 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 	font-size: 2.8rem;
 	line-height: 1.5em;
 }
+
 /* Smaller fonts for smaller screens */
 @media screen and (max-width: 680px) {
 	.entry-title {
@@ -1125,10 +1137,6 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 		line-height: 1.5em;
 	}
 }
-/*skjermstørrelse slutt */
-
-/*Kategori og meta. NB bruker ikke lengre. fjernet fra template-tags.php */
-
 /* Meta */
 .category-list {
 	margin: 1.3em 0 1em;
@@ -1172,7 +1180,7 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 	list-style-type: none;
 }
 
-.entry-footer li {
+.entry-footer li { /*Legger tagsene på linje etter hverandre .*/
 	display: inline-block;
 	margin-right: 4rem;
 }
@@ -1180,9 +1188,6 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 .entry-footer a {
 	margin-left: .5rem;
 }
-
-
-/*Typography slutt*/
 
 .sticky {
 }
@@ -1207,15 +1212,8 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 	margin: 0 0 1.5em;
 }
 
-
-/*flytter author eller kommentereren over på venstre side av  selve posten. Får ikke denne til å samsvare med WP sin huset_posted_on() metode
-  da WP ikke finner dato for posting. TODO
-  meta posted on posted by author
-*/
-
-/*
 @media screen and (min-width: 1320px){
-	.single .entry-meta {
+	.single .entry-meta {/*restyler alt over på større skjerm. plasserer meta om single post på venstre side av content. også ha på framside? spør mia */
 		width: 120px;
 		margin-left: -160px;
 		float: left;
@@ -1231,16 +1229,65 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 
 @media screen and (max-width: 1319px){
 	.posted-on:before {
-		content: ' on ';
+		content: ' on '; /*Legger på " on " når stor skjerm*/
 	}
 	.posted-on:after {
-		content: '.';
+		content: '.';/*punktum etter dato */
 	}
 }
-*/
 
+/* Blockquotes */
+blockquote {
+	padding: 1em 1.5em 0;
+	margin-bottom: 1em;
+	font-style: italic;
+	border-top: solid 1px hsl(0, 0%, 80%);
+	border-bottom: solid 1px hsl(0, 0%, 80%);
+}
 
+blockquote em {
+	font-style: normal;
+}
 
+blockquote cite { /* bah var htmlen min som var broken */
+	display: block;
+	margin-top: 1em;
+	margin-left: 40%;
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-family: 'Lato', sans-serif;
+	font-style: normal;
+	line-height: 1.5em;
+	text-align: right;
+}
+
+blockquote.alignleft {
+	width: 50%;
+	float: left;
+	padding: 1em 0 0;
+	margin-right: 2em;
+}
+
+blockquote.alignright {
+	width: 50%;
+	float: right;
+	padding: 1em 0 0;
+	margin-left: 2em;
+}
+
+/* Blockquotes responsive */
+@media screen and (max-width: 780px) {
+	blockquote.alignleft,
+	blockquote.alignright { width: 40%; }
+}
+
+@media screen and (max-width:600px) {
+	blockquote.alignleft,
+	blockquote.alignright {
+		width: 100%;
+		padding: 1em 1.5em 0;
+	}
+}
 
 
 

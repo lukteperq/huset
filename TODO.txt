@@ -34,3 +34,7 @@ bakgrunn fra .site-footer i styles.css
 
 -Widgets:
 widgets kan legges til i functions.php og legges til med sidebar-NOE.php under <div id="supplementary">
+
+
+
+http://wpthemetestdata.wordpress.com/ som link for å test-erstatte eget theme

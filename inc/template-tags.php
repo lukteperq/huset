@@ -24,7 +24,7 @@ if ( ! function_exists( 'huset_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		printf( __( '<span class="byline">Written by %2$s on </span><span class="posted-on">%1$s</span>', 'huset' ), /*Denne metoden kontrollerer også metoden under pga %2$s og %1$s. les mer under. fjern "space on" her hvis det skaper problemer med css */
+		printf( __( '<span class="byline">Written by %2$s</span><span class="posted-on">%1$s</span>', 'huset' ), /*Denne metoden kontrollerer også metoden under pga %2$s og %1$s. les mer under. fjern "space on" her hvis det skaper problemer med css */
 			sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 				esc_url( get_permalink() ),
 				$time_string

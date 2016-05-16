@@ -19,7 +19,7 @@
 			$category_list = get_the_category_list( __( ', ', 'huset' ) );
 
 			if ( huset_categorized_blog() ) {/*Tester om det er mer enn en kategori */
-				echo '<div class="category-list">' . $category_list . '</div>';
+				echo '<div class="category-list">' . $category_list . '</div>'; /*Vurder å fjern. Spør Mia */
 			}
 		?>
 
@@ -41,7 +41,7 @@
 
 			<?php
 			//Virker ikke TODO.. FIKSET :D
-			/*Tester om kommentarer krever passord, og om passord har status ÅPEN i tillegg til om det i  det hele tatt er kommentarer */
+			/*Tester om kommentarer krever passord, og om passord har status åpen i tillegg til om det i  det hele tatt er kommentarer */
 			if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 				echo '<span class="comments-link">';
 				comments_popup_link( __( 'Leave a comment', 'huset' ), __( '1 Comment', 'huset' ), __( '% Comments', 'huset' ) ); /*Hvis ingen kommentarer, 'leave a comment', hvis 1 kommentar, vis kommentar, hvis flere, vis antall kommentarer */
