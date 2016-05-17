@@ -33,19 +33,7 @@ if ( post_password_required() ) {
 				);
 			?>
 		</h2>
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'huset' ); ?></h2>
-			<div class="nav-links"><!-- her det bugger seg med nav links på single pages og med pages hvor comments er aktivert TODO -->
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'huset' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'huset' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
-
+		<!-- fjernet gammel TOP-kommentar-nav -->
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
@@ -56,16 +44,14 @@ if ( post_password_required() ) {
 		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'huset' ); ?></h2>
-			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'huset' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'huset' ) ); ?></div>
+			<nav id="comment-nav-below" class="comment-navigation clear" role="navigation">
+				<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'huset' ); ?></h1>
+				<div class="nav-previous"><?php previous_comments_link( __( '<i class="fa fa-arrow-circle-o-left"></i> Older Comments', 'huset' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <i class="fa fa-arrow-circle-o-right"></i>', 'huset' ) ); ?></div>
+			</nav><!-- #comment-nav-below -->
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
-		<?php
+			<?php
 		endif; // Check for comment navigation.
 
 	endif; // Check for have_comments().
