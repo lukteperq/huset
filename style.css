@@ -1317,12 +1317,130 @@ blockquote.alignright {
 	font-size: 36px;
 	font-size: 3.6rem;
 }
+.comments-area > ol {
+	padding: 0;
+	margin: 2em 0;
+	list-style-type: none; /*Flytter alle okmmentarene mot venstre */
+}
+
+ol.children {
+	list-style-type: none; /*Fjernet dem stygge tallene før kommentaren */
+}
+.comment-list ol {
+	margin-left: 50px; /*matcher  bredden av gravatar. endre i avatar_size i comments.php*/
+}
+
+.comment-meta {
+	margin-bottom: 1em;
+}
+.comment-author .avatar {
+	width: 50px;
+	display: block;
+	float: left;
+	margin-right: 20px;
+}
+.comment-author .fn {
+	font-weight: 900;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+.comment-metadata {
+	font-size: 14px;
+	font-size:1.4rem;
+}
+
+.comment-content {
+	font-size: 90%;
+}
+
+.comment-content,
+.reply {
+	margin-left: 70px; /*pga avatar = size, som = 50 + margin-right = 20 */
+}
+
+.comment-body {
+	padding-bottom: 2em;
+	margin-bottom: 2em;
+	border-bottom: solid hsl(0, 0%, 80%) 1px;
+}
 
 .comment-content a {
 	word-wrap: break-word;
 }
-.bypostauthor {
+
+.comment-content ol {
+	margin-left: 1.5em;
 }
+
+.reply {
+	font-weight: 600;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+.bypostauthor > .comment-body { /* targetter kun commentbodyen ti bypos. pga bug med list items */
+	position: relative;
+	padding: 1em;
+	margin-bottom: 2em;
+	background: hsl(0, 0%, 93%); /*Gjør author respons tydelig */
+	border: none;
+}
+@media screen and (max-width:600px) { /*fjerner indents på mobil skjermer */
+	.comment-list ol {
+		margin-left: 0;
+	}
+
+	.comment-content ol {
+		margin-left: 1.5em;
+	}
+
+	.comment-content,
+	.reply {
+		margin-left: 0;
+	}
+}
+
+.comment-reply-title {
+	margin-bottom: .5em;
+	font-weight: 900;
+	font-size: 30px;
+	font-size: 3rem;
+}
+.comment-form {
+	padding-bottom: 4rem;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+
+.comment-form textarea {
+	font-family: 'PT Serif', serif;
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+
+.comment-form label { /*skyver input under label */
+	display: block;
+}
+
+.required {
+	color: red;
+}
+
+.comment-awaiting-moderation { /* grønn farge for å få moderasjon til å virke mindre aggresiv */
+	padding: .5rem 1rem;
+	margin: 1rem 0;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	color: #fff;
+	color: hsl(0, 0%, 100%);
+	background: #84bd68;
+	background: hsl(100, 39%, 57%);
+}
+
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll

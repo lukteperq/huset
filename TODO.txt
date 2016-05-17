@@ -13,6 +13,10 @@ ved feks $1, så representerer det neste KOMMA separerte element/metode/ting
 Nav links nederst bugger seg på single.php, som henter metoden fra link-template.php
 Henter også nav links fra comments.php hvor comments er aktivert
 
+fjern "website" fra comments
+
+spør mia om featured bilde lengde/bredde
+
 ------HUSK PÅ:-----
 
 -HEADER:

@@ -10,6 +10,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<!-- setter inn featured image. plasserer inn i en div, siden hvis ingen thumbnail - >  -->
+
+	<?php
+	if (has_post_thumbnail()) {
+		echo '<div class="single-post-thumbnail clear">'; //styler
+		echo the_post_thumbnail('large-thumb');/* definert fra functions.php*/
+		echo '</div>';
+	}
+	?>
+
+	<?php //echo the_post_thumbnail('large-thumb');?>
+
+
+
 	<header class="entry-header">
 
 

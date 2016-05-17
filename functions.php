@@ -41,6 +41,9 @@ function huset_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+	/*Hver gang det blir uploadet et bilde, lag disse ^, og legg til 2 størresler som definert under. */
+	add_image_size('large-thumb', 1060,650, true); //fra media.php. width, height, true = WP scaler til å matche bredde, og cropper til å matche høyde. hvis false = viser bildet slik det er
+	add_image_size('index-thumb', 780, 250, true);//featured bilde som vises øverst i post. bred og smal. for smal? spør mia
 
 	// This theme uses wp_nav_menu() in one location. Registrerer alle menyer.
 	register_nav_menus( array(
