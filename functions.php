@@ -16,6 +16,16 @@ if ( ! function_exists( 'huset_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function huset_setup() {
+
+
+	// Styler backend visuell editor til å matche resten av themet
+	$font_url = 'https://fonts.googleapis.com/css?family=Lato:400,100,400italic,700,900italic,900|PT+Serif:400,700,400italic,700italic';
+	add_editor_style( array( 'inc/editor-style.css', str_replace( ',', '%2C', $font_url ) ) );
+
+
+
+
+
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -73,7 +83,9 @@ function huset_setup() {
 		'video',
 		'quote',
 		'link',
-	) );
+	) );/*mange flere. aside,gallery,link,image,quote,status.video,audio,chat
+		skjekk ut senere
+*/
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'huset_custom_background_args', array(
@@ -133,7 +145,14 @@ function huset_scripts() {
 	//Laster inn  stylesheets & scripts
 	wp_enqueue_style( 'huset-style', get_stylesheet_uri() );
 /*CUSTOM*/
-	wp_enqueue_style( 'huset-content-sidebar', get_template_directory_uri() . '/layouts/content-sidebar.css' );
+	//wp_enqueue_style( 'huset-content-sidebar', get_template_directory_uri() . '/layouts/content-sidebar.css' );
+	//la til css hvis ingen sidebar
+
+	if (is_page_template('page-templates/page-nosidebar.php')) {
+		wp_enqueue_style( 'huset-layout-style' , get_template_directory_uri() . '/layouts/no-sidebar.css');
+	} else {
+		wp_enqueue_style( 'huset-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
+	}
 
 	wp_enqueue_style('my_google_fonts', 'https://fonts.googleapis.com/css?family=Lato:400,100,400italic,700,900italic,900|PT+Serif:400,700,400italic,700italic');
 
@@ -189,6 +208,20 @@ add_filter('wp_nav_menu_items','add_search_to_wp_menu',10,2);
 
 add_action( 'wp_enqueue_scripts', 'huset_scripts' );
 
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ *
+ * lagt klart i tilfelle vi vil redigere excerpt default tekst
+
+function wpdocs_excerpt_more( $more ) {
+	return '[...]';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+ */
 
 
 /**

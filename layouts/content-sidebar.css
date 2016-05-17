@@ -51,7 +51,7 @@ Layout: Content-Sidebar
 	max-width: 780px;
 	max-width: 78rem;
 	padding: 1em 0 2em;
-	margin: 0 auto 2em;
+	margin: 0 auto 2em; /*første bildet er trøkt helt opp i navbar under .small-index-thumbnail i styles */
 	background: #fff;
 	background: hsl(0, 0%, 100%);
 }
@@ -95,7 +95,8 @@ Layout: Content-Sidebar
 	.post-navigation,
 	.comments-area,
 	.paging-navigation,
-	.index-box{
+	.index-box,
+	.page-header{
 		margin-right: 0; /* press opp mot sidebar til høyre  */
 	}
 
@@ -117,3 +118,11 @@ Layout: Content-Sidebar
     list-style-type: none;
     background: #fff;
 }*/
+.page-header,
+.paging-navigation { /*pagination nederst */
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-bottom: 2em;
+	list-style-type: none;
+	background: #fff;
+}

@@ -677,6 +677,32 @@ a:active {
 	margin: 0 1em;
 }
 
+
+/*Ny navigasjon hentet fra 2014 themet */
+
+.paging-navigation ul {
+	margin: 0;
+}
+
+.paging-navigation li { display: inline; }
+
+a.page-numbers,
+span.page-numbers {
+	padding: .3em .7em;
+	color: #333;
+	color: hsl(0, 0%, 20%);
+}
+
+a:hover.page-numbers {
+	color: #000;
+	color: hsl(0, 0%, 0%);
+}
+
+.paging-navigation .current {
+	font-weight: bold;
+	color: #000;
+	color: hsl(0, 0%, 0%);
+}
 /*--------------------------------------------------------------
 6.0 Accessibility
 --------------------------------------------------------------*/
@@ -1042,6 +1068,9 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 	color: hsl(0, 0%, 0%);
 }
 
+.page .entry-title { /*lagt til pga klæsh med arvet .entry-title fra ^ */
+	margin-top: .7em;
+}
 .entry-content a {
 	text-decoration: underline;
 }
@@ -1310,9 +1339,9 @@ blockquote.alignright {
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
+
+.format-aside .entry-content {
+	margin-top: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -1461,7 +1490,19 @@ Index and Archive
 .continue-reading i {
 	margin-left: .5em;
 }
-
+.sticky-post {/*sticky symbolet på sticky postst*/
+	position: absolute;
+	top: 1rem;
+	right: 3rem;
+}
+.taxonomy-description { /* beskrivelse til kategori etc*/
+	padding-top: 2rem;
+	margin: 2rem 0;
+	font-family: 'Lato', sans-serif;
+	font-style: italic;
+	border-top: 1px solid hsl(0, 0%, 75%);
+	border-bottom: 1px solid hsl(0, 0%, 75%);
+}
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
@@ -1587,6 +1628,36 @@ object {
 		width: 1060px;
 		float: right;
 	}
+}
+/*
+første side featured image. vurder å skjiit i. spør mia. fjern isåfall med content.php has-thumbnail
+
+*/
+.front-index-thumbnail {
+	margin-bottom: -3.2em;
+}
+
+@media screen and (max-width: 779px){
+	.front-index-thumbnail {
+		margin-bottom: 0;
+	}
+}
+.single-post-thumbnail img,
+.front-index-thumbnail img {
+	display: block;
+	margin: 0 auto;
+}
+
+.has-thumbnail {
+	position: relative;
+	margin-top: -8em;
+}
+
+/*end første side skjiit*/
+
+.small-index-thumbnail { /* Flytter featured image helt opp til hovednav navbar  */
+	margin-top: -1em;
+	margin-bottom: 1em;
 }
 
 /*--------------------------------------------------------------

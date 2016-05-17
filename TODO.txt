@@ -16,6 +16,8 @@ Henter også nav links fra comments.php hvor comments er aktivert
 fjern "website" fra comments
 
 spør mia om featured bilde lengde/bredde
+$latest_posts_query i search.php - funker ikke
+404 bug
 
 ------HUSK PÅ:-----
 
@@ -26,6 +28,7 @@ hvis ikke bakgrunnsbilde -> vanlig blå bakgrunn fra content_sidebar.css
 
 -POSTS
 kategorier, meta, og denslags kan edites/fjernes fra template-parts/content.php
+margin fra øverste post til navbar fikser jeg i .small-index-thumbnail i styles 
 
 -PAGES:
 
@@ -42,6 +45,8 @@ bakgrunn fra .site-footer i styles.css
 -Widgets:
 widgets kan legges til i functions.php og legges til med sidebar-NOE.php under <div id="supplementary">
 
+Search:
+huset_paging_nav()
 
 
 http://wpthemetestdata.wordpress.com/ som link for å test-erstatte eget theme

@@ -140,32 +140,51 @@ function huset_social_menu() { /* Oppretter sosial menyen */
 	}
 }
 
-if ( ! function_exists( 'huset_post_nav' ) ) :
-	/**
-	 * Ettersom link-template.php ligger i wp-includes så tror jeg den er lur å unngå. Lager dermed egen metode for å hente nav links
-	 *
-	 * @return void
-	 */
-function huset_post_nav() {
-	// ikke print tom html hvis det ikke er noen poster å navigere til
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
+if ( ! function_exists( 'huset_paging_nav' ) ) :
 
-	if ( ! $next && ! $previous ) {
+function huset_paging_nav() { /*Overkjører den fra template-link. hentet fra 2014 themet */
+	// skriver ikke tiom html hvis det ikke er mer enn en side
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
-	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<div class="post-nav-box clear"> <!-- bah. la til clear. havnet oppå hverandre -->
-			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'huset' ); ?></h1>
-			<div class="nav-links">
-				<?php
-				previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'huset' ) . '</div><h1>%link</h1></div>', '%title' );
-				next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'huset' ) . '</div><h1>%link</h1></div>', '%title' );
-				?>
-			</div><!-- .nav-links -->
-		</div><!-- .post-nav-box -->
-	</nav><!-- .navigation -->
-	<?php
+
+	$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+	$pagenum_link = html_entity_decode( get_pagenum_link() );
+	$query_args   = array();
+	$url_parts    = explode( '?', $pagenum_link );
+
+	if ( isset( $url_parts[1] ) ) {
+		wp_parse_str( $url_parts[1], $query_args );
+	}
+
+	$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
+	$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
+
+	$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
+	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
+
+	// Set up paginated links.
+	$links = paginate_links( array(
+		'base'     => $pagenum_link,
+		'format'   => $format,
+		'total'    => $GLOBALS['wp_query']->max_num_pages,
+		'current'  => $paged,
+		'mid_size' => 2,
+		'add_args' => array_map( 'urlencode', $query_args ),
+		'prev_text' => __( '← Previous', 'huset' ),
+		'next_text' => __( 'Next →', 'huset' ),
+		'type'      => 'list', /*endret til list fra 2014theme */
+	) );/* endret mid_size til 2. altså 2 tall før og etter current side deretter .....  */
+
+	if ( $links ) :
+
+		?>
+		<nav class="navigation paging-navigation" role="navigation">
+			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'huset' ); ?></h1>
+			<?php echo $links; ?>
+		</nav><!-- .navigation -->
+		<?php
+	endif;
 }
+
 endif;
