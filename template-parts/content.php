@@ -11,9 +11,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<!-- setter inn featured image. plasserer inn i en div jeg kan style -->
-
-
 	<?php
 	if (has_post_thumbnail()) {
 		echo '<div class="single-post-thumbnail clear">';
@@ -25,6 +22,10 @@
 	?>
 
 	<?php //echo the_post_thumbnail('large-thumb');?>
+	<div class="index-box">
+	<!-- setter inn featured image. plasserer inn i en div jeg kan style -->
+
+
 
 
 
@@ -37,7 +38,7 @@
 			$category_list = get_the_category_list( __( ', ', 'huset' ) );
 
 			if ( huset_categorized_blog() ) {/*Tester om det er mer enn en kategori */
-				echo '<div class="category-list">' . $category_list . '</div>'; /*Vurder å fjern. Spør Mia */
+				//echo '<div class="category-list">' . $category_list . '</div>'; /*Vurder å fjern. Spør Mia */
 			}
 		?>
 
@@ -98,6 +99,7 @@
 		?>
 
 
-		<?php //huset_entry_footer(); ?>
+		<?php huset_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	</div><!--.index-box -->
 </article><!-- #post-## -->

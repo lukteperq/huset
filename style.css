@@ -1236,14 +1236,20 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 	}
 }
 
-@media screen and (max-width: 1319px){
-	.posted-on:before {
-		content: ' on '; /*Legger på " on " når stor skjerm*/
-	}
-	.posted-on:after {
-		content: '.';/*punktum etter dato */
+.posted-on:before {
+	content: ' on ';
+}
+.posted-on:after {
+	content: '.';
+}
+
+@media screen and (min-width: 1320px) {
+	.single .posted-on:before,
+	.single .posted-on:after {
+		content: '';
 	}
 }
+
 
 /* Blockquotes */
 blockquote {
