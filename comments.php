@@ -39,6 +39,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'avatar_size' => 50, /*spør mia. 0 = av */
 				) );
 			?>
 		</ol><!-- .comment-list -->

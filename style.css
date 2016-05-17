@@ -1312,6 +1312,12 @@ blockquote.alignright {
 /*--------------------------------------------------------------
 10.3 Comments
 --------------------------------------------------------------*/
+.comments-title {
+	font-weight: 900;
+	font-size: 36px;
+	font-size: 3.6rem;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
