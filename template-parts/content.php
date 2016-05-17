@@ -11,12 +11,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<!-- setter inn featured image. plasserer inn i en div, siden hvis ingen thumbnail - >  -->
+	<!-- setter inn featured image. plasserer inn i en div jeg kan style -->
+
 
 	<?php
 	if (has_post_thumbnail()) {
-		echo '<div class="single-post-thumbnail clear">'; //styler
-		echo the_post_thumbnail('large-thumb');/* definert fra functions.php*/
+		echo '<div class="single-post-thumbnail clear">';
+		echo '<div class="image-shifter">'; /* Plasserer på høyre side på liten skjerm, center på stor skjerm */
+		echo the_post_thumbnail('large-thumb'); /*definert fra functions.php */
+		echo '</div>';
 		echo '</div>';
 	}
 	?>
