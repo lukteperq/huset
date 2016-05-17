@@ -722,13 +722,13 @@ a:active {
 /* Alignment responsive */
 @media screen and (min-width: 1320px) {
 	.alignleft {
-		margin-left: -160px;
+		margin-left: -160px; /*samme som meta. ved endring husk å endre meta  */
 	}
 }
 
 @media screen and (min-width: 1820px) {
 	.alignright {
-		margin-right: -160px;
+		margin-right: -160px;/*samme som meta. ved endring husk å endre meta  */
 	}
 }
 
@@ -1215,7 +1215,7 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 @media screen and (min-width: 1320px){
 	.single .entry-meta {/*restyler alt over på større skjerm. plasserer meta om single post på venstre side av content. også ha på framside? spør mia */
 		width: 120px;
-		margin-left: -160px;
+		margin-left: -160px; /*samme som align mediaquery. ved endring husk p endre alignment */
 		float: left;
 		text-align: right;
 	}
@@ -1332,22 +1332,26 @@ blockquote.alignright {
 	margin-bottom: 0;
 	margin-top: 0;
 	padding: 0;
-}
+}/*Fikset image captions til å skille seg ut fra vanlig content */
 .wp-caption {
-	border: 1px solid #ccc;
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin: 1.2% auto 0;
-	max-width: 98%;
+	margin: 0 auto;
 }
 .wp-caption-text {
 	text-align: center;
 }
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0; /*Litt stor margin kanskje? spør mia */
+	padding: 0.8075em 1em;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-family: 'Lato', sans-serif;
+	background: #e5e5e5;
+	background: hsl(0, 0%, 90%);
+	/*margin: 0.8075em 0; /*Litt stor margin kanskje? spør mia. bruker iikke lengre */
 }
 .site-main .gallery {
 	margin-bottom: 1.5em;
