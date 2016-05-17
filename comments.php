@@ -28,9 +28,8 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'huset' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
+					esc_html( _nx( 'One comment', '%1$s comments', get_comments_number(), 'comments title', 'huset' ) ),
+					number_format_i18n( get_comments_number() )
 				);
 			?>
 		</h2>
@@ -38,7 +37,7 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'huset' ); ?></h2>
-			<div class="nav-links">
+			<div class="nav-links"><!-- her det bugger seg med nav links på single pages og med pages hvor comments er aktivert TODO -->
 
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'huset' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'huset' ) ); ?></div>

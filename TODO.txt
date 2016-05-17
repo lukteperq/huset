@@ -11,6 +11,7 @@ ved feks $1, så representerer det neste KOMMA separerte element/metode/ting
 <nav class="navigation post-navigation">   nav_next og prev er tydeligvis inni wp-includes/link-template.php.. Fikset :D
 
 Nav links nederst bugger seg på single.php, som henter metoden fra link-template.php
+Henter også nav links fra comments.php hvor comments er aktivert
 
 ------HUSK PÅ:-----
 

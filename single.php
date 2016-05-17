@@ -22,7 +22,7 @@ get_header(); ?>
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
-				comments_template();
+				comments_template(); //Skjekker først om det finnes en comments.php, hvis ikke -> henter den fra WP default
 			endif;
 
 		endwhile; // End of the loop.
