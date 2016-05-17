@@ -79,8 +79,12 @@
 
 	<div class="entry-content">
 		<?php
+		/*
+		Fjernet pga vil bare vise litt av teksten. erstattet med the_excerpt()
+
+
 			the_content( sprintf(
-				/* translators: %s: Name of current post. */
+				//translators: %s: Name of current post. *
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'huset' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
@@ -89,17 +93,16 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'huset' ),
 				'after'  => '</div>',
 			) );
+		*/
+		the_excerpt();
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-	<!-- La til styling på tags -->
-		<?php
-			echo get_the_tag_list( '<ul><li><i class="fa fa-tag"></i>', '</li><li><i class="fa fa-tag"></i>', '</li></ul>' );
-		?>
+		<footer class="entry-footer continue-reading">
+			<?php echo '<a href="' . get_permalink() . '" title="' . __('Continue Reading ', 'huset') . get_the_title() . '" rel="bookmark">Continue Reading<i class="fa fa-arrow-circle-o-right"></i></a>'; ?>
+			<?php //huset_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
 
 
-		<?php huset_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 	</div><!--.index-box -->
 </article><!-- #post-## -->

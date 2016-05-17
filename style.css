@@ -1447,6 +1447,20 @@ ol.children {
 	background: hsl(100, 39%, 57%);
 }
 
+/*--------------------------------------------------------------
+Index and Archive
+--------------------------------------------------------------*/
+
+.continue-reading {
+	margin: 0 4rem;
+	font-weight: 900;
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+
+.continue-reading i {
+	margin-left: .5em;
+}
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll
