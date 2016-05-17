@@ -10,6 +10,8 @@ Vurder å fjern kategori fra content.php evt  $categories_list fra template-tag.
 ved feks $1, så representerer det neste KOMMA separerte element/metode/ting
 <nav class="navigation post-navigation">   nav_next og prev er tydeligvis inni wp-includes/link-template.php.. Fikset :D
 
+Nav links nederst bugger seg på single.php, som henter metoden fra link-template.php
+
 ------HUSK PÅ:-----
 
 -HEADER:

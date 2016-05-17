@@ -144,3 +144,33 @@ function huset_social_menu() { /* Oppretter sosial menyen */
 		);
 	}
 }
+
+if ( ! function_exists( 'huset_post_nav' ) ) :
+	/**
+	 * Ettersom link-template.php ligger i wp-includes så tror jeg den er lur å unngå. Lager dermed egen metode for å hente nav links
+	 *
+	 * @return void
+	 */
+function huset_post_nav() {
+	// ikke print tom html hvis det ikke er noen poster å navigere til
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+	<nav class="navigation post-navigation" role="navigation">
+		<div class="post-nav-box clear"> <!-- bah. la til clear. havnet oppå hverandre -->
+			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'huset' ); ?></h1>
+			<div class="nav-links">
+				<?php
+				previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'huset' ) . '</div><h1>%link</h1></div>', '%title' );
+				next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'huset' ) . '</div><h1>%link</h1></div>', '%title' );
+				?>
+			</div><!-- .nav-links -->
+		</div><!-- .post-nav-box -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
