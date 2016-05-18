@@ -1,4 +1,7 @@
-﻿font-awesome gir 403 :( kjør lokalt istedet. virket plutselig igejen.
+﻿VIKTIG!!
+BUG med single post. Viser ikke ønsket innhold. Må være bug mellom single.php -> content-single.php FIKS!!!!!!
+
+font-awesome gir 403 :( kjør lokalt istedet. virket plutselig igejen.
 Fiks superfish - får den ikke til å virke :( -> fikset
 
 Jævla nav-menu -> menu -> fikset.
@@ -19,6 +22,8 @@ spør mia om featured bilde lengde/bredde
 $latest_posts_query i search.php - funker ikke
 404 bug
 
+instagram/snapchat istedet for twitter
+ta vekk google
 ------HUSK PÅ:-----
 
 -HEADER:

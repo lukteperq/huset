@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'template-parts/content-single', get_post_format() ); /* tidl template-parts/content. woop woop */
 
 			//the_post_navigation(); metode ligger i link-template.php i wp-includes så kan ikke redigere. lager egen i template-tags
 			huset_paging_nav();

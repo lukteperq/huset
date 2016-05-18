@@ -743,6 +743,12 @@ a:hover.page-numbers {
 	float: left;
 	margin-right: 1.5em;
 }
+.alignlefttest {
+	display: inline;
+	float: left;
+	margin-left: -19.5em;
+}
+
 .alignright {
 	display: inline;
 	float: right;
@@ -1266,7 +1272,7 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 }
 
 .posted-on:before {
-	content: ' on ';
+	/*content: ' on ';*/
 }
 .posted-on:after {
 	content: '.';
@@ -1682,4 +1688,7 @@ første side featured image. vurder å skjiit i. spør mia. fjern isåfall med c
 
 .site-info {
 	text-align: center;
+}
+.site-branding{
+	height:420px;
 }

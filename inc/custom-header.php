@@ -27,7 +27,7 @@ function huset_custom_header_setup() {
 		'default-text-color'     => '000000', /* standardverdi 000000 - hvit */
 		'width'                  => 1280, /* standardverdi 1000*/
 		'height'                 => 300, /* standardverdi 250 */
-		'flex-height'            => false, /* Tillater å uploade et bilde, for å deretter resize den. Standard true */
+		'flex-height'            => true, /* Tillater å uploade et bilde, for å deretter resize den. Standard true */
 		'wp-head-callback'       => 'huset_header_style',
 	) ) );
 

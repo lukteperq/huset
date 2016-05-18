@@ -5,7 +5,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php 
+    <?php
     if( $wp_query->current_post == 0 && !is_paged() && is_front_page() ) { // her finner jeg første post på siden vi lander på og om den er førsteside, og den er ikke paget. Altså ingen GET request eller mappeinndelinger videre
         if (has_post_thumbnail()) {
             echo '<div class="front-index-thumbnail clear">';
@@ -31,7 +31,7 @@
     }
     ?>
 	<header class="entry-header">
-            
+
             <?php
             if (is_sticky()) {
                 echo '<i class="fa fa-thumb-tack sticky-post"></i>';
@@ -50,8 +50,8 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php huset_posted_on(); ?>
-                        <?php 
-                            if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { 
+                        <?php
+                            if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
                                 echo '<span class="comments-link">';
                                 comments_popup_link( __( 'Leave a comment', 'huset' ), __( '1 Comment', 'huset' ), __( '% Comments', 'huset' ) );
                                 echo '</span>';
@@ -61,9 +61,9 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-	
-	<?php 
-        if( $wp_query->current_post == 0 && !is_paged() && is_front_page() ) { 
+
+	<?php
+        if( $wp_query->current_post == 0 && !is_paged() && is_front_page() ) {
             echo '<div class="entry-content">';
             the_content( __( '', 'huset' ) );
             echo '</div>';
