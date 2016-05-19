@@ -409,6 +409,7 @@ a:active {
 	line-height: 1.3em;
 	color: white;
 	color: hsl(0, 0%, 100%);
+	letter-spacing:1.7px;
 }
 
 .main-navigation .fa {
