@@ -160,6 +160,8 @@ function huset_scripts() {
 
 	//wp_enqueue_style('Font_awesome', 'https://use.fontawesome.com/a0b1640525.js'); virker ikke pga js
 
+	wp_enqueue_script( 'huset-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '20140401', true );
+
 	wp_enqueue_script( 'huset-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20140404', true ); //ah array er dependencies. Altså den er avhengig av jquery. true = last inn i footer, false = header
 
 	wp_enqueue_script( 'huset-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('huset-superfish'), '20140328', true );

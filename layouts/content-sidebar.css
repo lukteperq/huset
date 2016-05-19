@@ -41,12 +41,12 @@ Layout: Content-Sidebar
 .paging-navigation,
 .page-header{
 	position: relative;
-/*
+
 	max-width: 780px;
 	max-width: 78rem;
-*/
-	max-width: 978px;
-	max-width: 100rem; /*Endret på bredden på content */
+
+	/*max-width: 978px;
+	/*max-width: 100rem; /*Endret på bredden på content */
 	padding: 0 4rem;
 	margin: 0 auto;
 }
