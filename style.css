@@ -1074,7 +1074,7 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 	color: hsl(0, 0%, 0%);
 }
 
-#page .entry-title { /*lagt til pga klæsh med arvet .entry-title fra ^ endret til ID fra class */
+#page .entry-title { /*lagt til pga klæsh med arvet .entry-title fra ^ endret til ID fra class pga bug */
 	/*margin-top: .7em;*/
 	margin-top: 60px;
 }
@@ -1271,9 +1271,8 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 		margin-bottom: 1em;
 	}
 }
-
 .posted-on:before {
-	/*content: ' on ';*/
+	content: ' on ';
 }
 .posted-on:after {
 	content: '.';

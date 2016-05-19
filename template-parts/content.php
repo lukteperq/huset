@@ -68,15 +68,15 @@
             the_content( __( '', 'huset' ) );
             echo '</div>';
             echo '<footer class="entry-footer continue-reading">';
-            echo '<a href="' . get_permalink() . '" title="' . __('Read ', 'huset') . get_the_title() . '" rel="bookmark">Read the article<i class="fa fa-arrow-circle-o-right"></i></a>';
+            echo '<a href="' . get_permalink() . '" title="' . __('Read ', 'huset') . get_the_title() . '" rel="bookmark">bugittybug<i class="fa fa-arrow-circle-o-right"></i></a>';
             echo '</footer><!-- .entry-footer -->';
         } else { ?>
             <div class="entry-content">
-            <?php the_excerpt(); ?>
+            <?php the_content( __( '', 'huset' ) ); //the_excerpt();?> <!-- Gjort om slik for simpelthetens skyld TODO-->
             </div><!-- .entry-content -->
             <footer class="entry-footer continue-reading">
-            <?php echo '<a href="' . get_permalink() . '" title="' . __('Continue Reading ', 'huset') . get_the_title() . '" rel="bookmark">Continue Reading<i class="fa fa-arrow-circle-o-right"></i></a>'; ?>
-            <?php //echo get_the_tag_list( '<ul><li><i class="fa fa-tag"></i>', '</li><li><i class="fa fa-tag"></i>', '</li></ul>' ); ?>
+            <?php echo '<a href="' . get_permalink() . '" title="' . __('Continue Reading ', 'huset') . get_the_title() . '" rel="bookmark">Les mer<i class="fa fa-arrow-circle-o-right"></i></a>'; ?>
+            <?php echo get_the_tag_list( '<ul><li><i class="fa fa-tag"></i>', '</li><li><i class="fa fa-tag"></i>', '</li></ul>' ); ?>
             </footer><!-- .entry-footer -->
         <?php } ?>
     </div><!-- .index-box -->
