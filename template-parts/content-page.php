@@ -7,8 +7,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    
-    <?php 
+
+    <?php
     if (has_post_thumbnail()) {
         echo '<div class="single-post-thumbnail clear">';
         echo '<div class="image-shifter">';
@@ -17,9 +17,14 @@
         echo '</div>';
     }
     ?>
-    
+
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
+    <?php if(get_the_title() == "fb" && is_user_logged_in () ){
+        add_fb();
+
+    };
+     ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

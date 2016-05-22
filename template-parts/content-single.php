@@ -28,7 +28,7 @@
 		<h1 class="entry-title"><?= the_title(); ?></h1>
 
 		<div class="entry-meta">
-			<?php huset_posted_on();?>
+			<?php //huset_posted_on();?>
       <?php
           if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
               echo '<span class="comments-link">';

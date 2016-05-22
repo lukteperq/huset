@@ -1,13 +1,13 @@
 jQuery(document).ready(function($){
-  var headerHeight = 200;
   $(window).scroll(function(e){
+        if($(this).scrollTop() > parseInt($('.site-branding').css('height'))){
 
-        if($(this).scrollTop() > 422){
-          $('.main-navigation').addClass('fixed');
+            $('.site-branding').addClass('margin');
+            $('.main-navigation').addClass('fixed');
         }else{
-          $('.main-navigation').removeClass('fixed');
+            $('.main-navigation').removeClass('fixed');
+            $('.site-branding').removeClass('margin');
         }
-//console.log($(this).scrollTop());
   });
 
 

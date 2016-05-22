@@ -156,7 +156,8 @@ function huset_scripts() {
 
 	wp_enqueue_style('my_google_fonts', 'https://fonts.googleapis.com/css?family=Lato:400,100,400italic,700,900italic,900|PT+Serif:400,700,400italic,700italic');
 
-
+	/*Bootstrap*/
+	//wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
 
 	//wp_enqueue_style('Font_awesome', 'https://use.fontawesome.com/a0b1640525.js'); virker ikke pga js
 
@@ -210,6 +211,113 @@ add_filter('wp_nav_menu_items','add_search_to_wp_menu',10,2);
 
 add_action( 'wp_enqueue_scripts', 'huset_scripts' );
 
+
+function add_fb(){
+	$includeFiles = [
+		'wp-includes/post.php',
+	];
+
+	foreach ($includeFiles as $key => $value){
+		// use require_once so we dont include files that has already been included
+		require_once(ABSPATH . $value);
+	}
+
+		echo 'Running facebook download!<br>';
+	//https://developers.facebook.com/docs/graph-api/reference/event/
+
+	    // What facebook page to get events from;
+	    $page = "HusetGjovik";
+
+	    // Facebook Open Graph API token
+	    $token = "EAACmclm94ZAgBACZB3smurkSIZAV31ZAFyNCUMo9ZAQrHDbJgyuPBb0M6yorzPr2XppK5f3AyorNEqKPCiVdlJKHCiyVbkceGObkvyavBPSBHZCOP9IZCN6eLWm1d7HfnCmj0cMo5zvKZCEE9yQHMhG4L9jtx5AjN2sZD";
+
+	    $url = "{$page}/events";
+
+	    function request($url, $token){
+	        $urlToken = "https://graph.facebook.com/v2.6/" . $url . $token;
+	        $response = json_decode(file_get_contents($urlToken));
+	        return $response;
+	    }
+
+	    $feilds = [
+	        'ticket_uri',
+	        'cover',
+	        'name',
+	        'start_time',
+	        'end_time',
+	        'description',
+			'updated_time',
+			'id',
+	    ];
+	    $feilds = implode(',', $feilds);
+
+	    $token_url = "?fields={$feilds}&access_token={$token}";
+
+	    $data = request($url, $token_url)->data;
+
+		function slug($str){
+			$result = preg_replace("/([^a-zA-Z0-9\\s])/uis", "", strtolower(trim($str)));
+
+			return preg_replace("/\s/ui", '-', $result);
+		}
+
+
+		$db = new wpdb(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
+	    foreach($data as $key => $item){
+
+			$isLive = $db->query("select * from huset_posts WHERE post_title = '{$item->name}' AND post_date = '{$item->start_time}'");
+			echo $isLive;
+			if($isLive == 0){
+				echo '<h2>'.$item->name.' was added</h2>';
+				$description = '<img src="'.$item->cover->source.'" alt="header image" />'.$item->description;
+
+				if(isset($item->ticket_uri)){
+
+					$description .= '<h1 class="entry-title site-info"><a href="'.$item->ticket_uri.'" target="_blank">Kjøp Billett Her</a></h1>';
+
+				}
+
+
+	            $post_id = wp_insert_post([
+	                'post_title' => $item->name,
+	                'post_content' => $description,
+	                'comment_status' => 'closed', // open, remove comments
+					'post_date' => $item->start_time,
+					'post_name' => slug($item->name)
+	            ]);
+
+
+
+
+				echo '<p>id: '.$post_id.'/'.$item->id.'</p>';
+				$tags = explode(' ', $item->name);
+
+				foreach ($tags as $key => $value){
+					if(strlen($value) < 4){
+						unset($tags[$key]);
+					}
+				}
+
+				$tags_to_add = array_merge($tags, [
+					'event',
+					'huset',
+	            ]);
+	            //Post Tags
+	            wp_set_post_tags($post_id, $tags_to_add);
+
+	            // Post category, Array of category ID's
+	            wp_set_post_categories($post_id, [
+	                243,
+	            ]);
+
+
+				wp_publish_post($post_id);
+				echo '<hr>';
+			}
+
+		}
+
+}//add_fb()
 
 /**
  * Filter the excerpt "read more" string.

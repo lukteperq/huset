@@ -163,7 +163,7 @@ function huset_paging_nav() { /*Overkjører den fra template-link. hentet fra 20
 	$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
 	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
 
-	// Set up paginated links.
+	// Set up pagina links.
 	$links = paginate_links( array(
 		'base'     => $pagenum_link,
 		'format'   => $format,
@@ -171,8 +171,8 @@ function huset_paging_nav() { /*Overkjører den fra template-link. hentet fra 20
 		'current'  => $paged,
 		'mid_size' => 2,
 		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '← Previous', 'huset' ),
-		'next_text' => __( 'Next →', 'huset' ),
+		'prev_text' => __( '← Forrige', 'huset' ),
+		'next_text' => __( 'Neste →', 'huset' ),
 		'type'      => 'list', /*endret til list fra 2014theme */
 	) );/* endret mid_size til 2. altså 2 tall før og etter current side deretter .....  */
 

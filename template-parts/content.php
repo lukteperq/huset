@@ -49,7 +49,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php huset_posted_on(); ?>
+			<?php //huset_posted_on(); ?>
                         <?php
                             if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
                                 echo '<span class="comments-link">';
@@ -62,22 +62,14 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php
-        if( $wp_query->current_post == 0 && !is_paged() && is_front_page() ) {
-            echo '<div class="entry-content">';
-            the_content( __( '', 'huset' ) );
-            echo '</div>';
-            echo '<footer class="entry-footer continue-reading">';
-            echo '<a href="' . get_permalink() . '" title="' . __('Read ', 'huset') . get_the_title() . '" rel="bookmark">bugittybug<i class="fa fa-arrow-circle-o-right"></i></a>';
-            echo '</footer><!-- .entry-footer -->';
-        } else { ?>
+
             <div class="entry-content">
             <?php the_content( __( '', 'huset' ) ); //the_excerpt();?> <!-- Gjort om slik for simpelthetens skyld TODO-->
             </div><!-- .entry-content -->
             <footer class="entry-footer continue-reading">
-            <?php echo '<a href="' . get_permalink() . '" title="' . __('Continue Reading ', 'huset') . get_the_title() . '" rel="bookmark">Les mer<i class="fa fa-arrow-circle-o-right"></i></a>'; ?>
+            <?php echo '<a href="' . get_permalink() . '" title="' . __('Continue Reading ', 'huset') . get_the_title() . '" rel="bookmark">Les mer <i class="fa fa-arrow-circle-o-right"></i></a>'; ?>
             <?php echo get_the_tag_list( '<ul><li><i class="fa fa-tag"></i>', '</li><li><i class="fa fa-tag"></i>', '</li></ul>' ); ?>
             </footer><!-- .entry-footer -->
-        <?php } ?>
+
     </div><!-- .index-box -->
 </article><!-- #post-## -->
