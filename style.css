@@ -1787,3 +1787,9 @@ første side featured image. vurder å skjiit i. spør mia. fjern isåfall med c
 		margin:0 auto !important;
 	}
 }
+
+/*Contact form checkboxes */
+
+.wpcf7-checkbox{
+	cursor:pointer;
+}
