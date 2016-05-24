@@ -1645,10 +1645,6 @@ object {
 
 /* Featured Images */
 
-.single-post-thumbnail {
-	background: #b2b2b2 url(images/pattern.svg) repeat; /* najs? spør mia */
-}
-
 .single-post-thumbnail img {
 	display: block;
 	margin: 0 auto; /*sentrerer bilde */
@@ -1697,8 +1693,8 @@ første side featured image. vurder å skjiit i. spør mia. fjern isåfall med c
 
 /*end første side skjiit*/
 
-.small-index-thumbnail { /* Flytter featured image helt opp til hovednav navbar  */
-	margin-top: -1em;
+.small-index-thumbnail { /* Flytter featured image helt opp til hovednav navbar. fjerner igjen  */
+	/*margin-top: -1em;*/
 	margin-bottom: 1em;
 }
 
