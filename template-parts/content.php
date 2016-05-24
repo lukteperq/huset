@@ -16,7 +16,7 @@
         <?= is_sticky() ? '<i class="fa fa-thumb-tack sticky-post"></i>' : '' ?>
 
         <?php $category_list = get_the_category_list( __( ', ', 'huset' ) );
-            if ( huset_categorized_blog() && is_front_page() ) {
+            if ( huset_categorized_blog() && ! is_front_page() ) {
                 echo '<div class="category-list">' . $category_list . '</div>';
             } ?>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>

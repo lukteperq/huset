@@ -1649,6 +1649,7 @@ object {
 	display: block;
 	margin: 0 auto; /*sentrerer bilde */
 }
+/*
 @media screen and (min-width: 1820px) {
 	.image-shifter {
 		width: 1060px;
@@ -1667,6 +1668,7 @@ object {
 		float: right;
 	}
 }
+*/
 /*
 første side featured image. vurder å skjiit i. spør mia. fjern isåfall med content.php has-thumbnail
 
