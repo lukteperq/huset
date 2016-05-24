@@ -19,11 +19,8 @@ function huset_setup() {
 
 
 	// Styler backend visuell editor til å matche resten av themet
-	$font_url = 'https://fonts.googleapis.com/css?family=Lato:400,100,400italic,700,900italic,900|PT+Serif:400,700,400italic,700italic';
+	$font_url = 'https://fonts.googleapis.com/css?family=Roboto:700,300';
 	add_editor_style( array( 'inc/editor-style.css', str_replace( ',', '%2C', $font_url ) ) );
-
-
-
 
 
 	/*
@@ -154,7 +151,7 @@ function huset_scripts() {
 		wp_enqueue_style( 'huset-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
 	}
 
-	wp_enqueue_style('my_google_fonts', 'https://fonts.googleapis.com/css?family=Lato:400,100,400italic,700,900italic,900|PT+Serif:400,700,400italic,700italic');
+	wp_enqueue_style('my_google_fonts', 'https://fonts.googleapis.com/css?family=Roboto:700,300');
 
 	/*Bootstrap*/
 	//wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');

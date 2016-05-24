@@ -132,7 +132,7 @@ select,
 textarea {
 	color: #404040;
 	color: hsl(0, 0%, 25%);
-	font-family: 'PT Serif', serif;
+	font-family: 'roboto', serif;
 	font-size: 18px;
 	font-size: 1.8rem;
 	line-height: 1.5;
@@ -140,7 +140,7 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
 	clear: right;
 	font-weight: 900;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	color: #000;
 	color: hsl(0, 0%, 0%);
 	-ms-word-wrap: break-word;
@@ -270,7 +270,7 @@ input[type="submit"] {
 	padding: 1em 2em;
 	font-size: 16px;
 	font-size: 1.6rem;
-	font-family: 'Lato';
+	font-family: 'roboto';
 	text-transform: uppercase;
 	line-height: 1;
 	color: hsl(0, 0%, 100%);
@@ -328,7 +328,7 @@ input[type="password"],
 input[type="search"],
 textarea {
 	padding: 8px;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	color: #333;
 	border: 1px solid #ccc;
 }
@@ -386,7 +386,7 @@ a:active {
 	width: 100%;
 	display: block;
 	clear: both;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	text-transform: uppercase;
 	background: #313131;
 	background: hsl(0, 0%, 19%);
@@ -636,7 +636,7 @@ a:active {
 .site-main .post-navigation {
 	font-size: 18px;
 	font-size: 1.8rem;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	color: #000;
 	color: hsl(0, 0%, 0%);
 }
@@ -974,7 +974,7 @@ input[type="search"] { /* lager en dropdown til søkefeltet, når jeg trykker p�
 --------------------------------------------------------------*/
 .widget {/* ettersom alle widgeter har class widget (se functions.php) */
 	margin: 0 0 4em;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 }
@@ -1221,7 +1221,7 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 /* Meta */
 .category-list {
 	margin: 1.3em 0 1em;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 }
@@ -1239,7 +1239,7 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 .entry-meta {
 	margin-bottom: 2rem;
 	padding: 0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-size: 14px;
 	font-size: 1.4rem;
 }
@@ -1249,7 +1249,7 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 .entry-footer {
 	margin-top: 3rem;
 	margin-bottom: 5rem;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 2em;
@@ -1341,7 +1341,7 @@ blockquote cite { /* bah var htmlen min som var broken */
 	margin-left: 40%;
 	font-size: 18px;
 	font-size: 1.8rem;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-style: normal;
 	line-height: 1.5em;
 	text-align: right;
@@ -1418,7 +1418,7 @@ ol.children {
 }
 .comment-author .fn {
 	font-weight: 900;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-size: 20px;
 	font-size: 2rem;
 }
@@ -1453,7 +1453,7 @@ ol.children {
 
 .reply {
 	font-weight: 600;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-size: 14px;
 	font-size: 1.4rem;
 }
@@ -1487,13 +1487,13 @@ ol.children {
 }
 .comment-form {
 	padding-bottom: 4rem;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 }
 
 .comment-form textarea {
-	font-family: 'PT Serif', serif;
+	font-family: 'roboto', serif;
 	font-size: 18px;
 	font-size: 1.8rem;
 }
@@ -1509,7 +1509,7 @@ ol.children {
 .comment-awaiting-moderation { /* grønn farge for å få moderasjon til å virke mindre aggresiv */
 	padding: .5rem 1rem;
 	margin: 1rem 0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 	color: #fff;
@@ -1540,7 +1540,7 @@ Index and Archive
 .taxonomy-description { /* beskrivelse til kategori etc*/
 	padding-top: 2rem;
 	margin: 2rem 0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-style: italic;
 	border-top: 1px solid hsl(0, 0%, 75%);
 	border-bottom: 1px solid hsl(0, 0%, 75%);
@@ -1585,7 +1585,7 @@ Index and Archive
 	padding: 0.8075em 1em;
 	font-size: 14px;
 	font-size: 1.4rem;
-	font-family: 'Lato', sans-serif;
+	font-family: 'roboto', sans-serif;
 	background: #e5e5e5;
 	background: hsl(0, 0%, 90%);
 	/*margin: 0.8075em 0; /*Litt stor margin kanskje? spør mia. bruker iikke lengre */
@@ -1706,7 +1706,7 @@ første side featured image. vurder å skjiit i. spør mia. fjern isåfall med c
 
 .site-footer {
 	padding: 2em;
-	font-family: 'Lato';
+	font-family: 'roboto';
 	font-size: 16px;
 	font-size: 1.6rem;
 	color: #fff;

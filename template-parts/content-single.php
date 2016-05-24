@@ -9,7 +9,7 @@
 	<header class="entry-header">
     <?php if (has_post_thumbnail()) { ?>
         <div class="single-post-thumbnail clear">
-          <div class="image-shifter">
+          <div class="index-box>
               <?= the_post_thumbnail('large-thumb') ?>
           </div>
         </div>

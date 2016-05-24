@@ -7,7 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
         <div class="front-index-thumbnail clear">
-            <div class="image-shifter">
+            <div class="index-box">
                 <a href="<?= get_permalink() ?>" title="<?= __('Read ', 'huset') . get_the_title() ?>" rel="bookmark">
                     <?= the_post_thumbnail('large-thumb'); ?>
                 </a>

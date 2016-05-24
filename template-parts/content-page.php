@@ -11,7 +11,7 @@
     <?php
     if (has_post_thumbnail()) {
         echo '<div class="single-post-thumbnail clear">';
-        echo '<div class="image-shifter">';
+        echo '<div class="index-box">';
         echo the_post_thumbnail('large-thumb');
         echo '</div>';
         echo '</div>';
@@ -20,7 +20,7 @@
 
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-  
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
