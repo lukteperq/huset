@@ -1791,3 +1791,7 @@ første side featured image. vurder å skjiit i. spør mia. fjern isåfall med c
 .wpcf7-checkbox{
 	cursor:pointer;
 }
+/*responsiv forms fra contactform 7 */
+div.wpcf7 .wpcf7-form-control {
+	max-width: 100%;
+}
