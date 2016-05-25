@@ -20,9 +20,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-
-	<header id="masthead" class="site-header" role="banner">
+<header id="masthead" class="site-header" role="banner">
+    <div id="page" class="hfeed site">
 		<?php if ( get_header_image() && ('blank' == get_header_textcolor()) ) : ?>
 			<div class="header-image">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -42,7 +41,7 @@
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><?= the_custom_logo() ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
-</div>
+    </div>
 
 <nav id="site-navigation" class="main-navigation" role="navigation">
 	<h1 class="menu-toggle"><?php _e( 'Menu', 'huset' ); ?></h1><!-- Meny tekst. Spør evt Mia hva som er best -->
