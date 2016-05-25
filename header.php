@@ -20,8 +20,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header id="masthead" class="site-header" role="banner">
-    <div id="page" class="hfeed site">
+<div id="page" class="hfeed site">
+
+	<header id="masthead" class="site-header" role="banner">
 		<?php if ( get_header_image() && ('blank' == get_header_textcolor()) ) : ?>
 			<div class="header-image">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -30,18 +31,18 @@
 			</div>
 		<?php endif; // End header image check. ?>
 
-		<?php
-		if ( get_header_image() && !('blank' == get_header_textcolor()) ) {
-			echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">';
-		} else {
-			echo '<div class="site-branding">';
-		}
-		?>
-		<div class="title-box">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><?= the_custom_logo() ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
-    </div>
+        <?php
+        if ( get_header_image() && !('blank' == get_header_textcolor()) ) {
+            echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">';
+        } else {
+            echo '<div class="site-branding">';
+        }
+        ?>
+            <div class="title-box">
+                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><?= the_custom_logo() ?></a></h1>
+                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            </div>
+        </div>
 
 <nav id="site-navigation" class="main-navigation" role="navigation">
 	<h1 class="menu-toggle"><?php _e( 'Menu', 'huset' ); ?></h1><!-- Meny tekst. Spør evt Mia hva som er best -->

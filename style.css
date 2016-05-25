@@ -73,9 +73,7 @@ html {
 }
 *,
 *:before,
-*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
-	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+*:after { 
 	box-sizing:         border-box;
 }
 body {
@@ -304,9 +302,7 @@ input[type="radio"] {
 	padding: 0; /* Addresses excess padding in IE8/9 */
 }
 input[type="search"] {
-	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
-	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
-	-moz-box-sizing:    content-box;
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */ /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	box-sizing:         content-box;
 	-webkit-appearance: none;
 	-moz-appearance:    none;
@@ -836,21 +832,11 @@ X.X Header
 	margin:0 auto;
 }
 
-.header-background-image { /*Strekker hele bildet slik at det tar opp hele bredden av skjermen og ikke tiler */
+.site-branding.header-background-image { /*Strekker hele bildet slik at det tar opp hele bredden av skjermen og ikke tiler */
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: cover !important;
-	-moz-background-size: cover !important;
-	-webkit-background-size: cover !important; /*Må tilsynelatende bruker improtant */
+	background-size: cover;
 }
-
-.header-background-image .title-box { /*Transparent Bakgrunn til tittel og tagline.. Agne likte ikke. Spør Mia også*/
-	/*
-	background: #333;
-	background: hsla(0, 0%, 0%, .7);
-	*/
-}
-
 
 .site-branding { /* sitter på tittel og evt bilde, bakgrunn = Ramme sammen med border under */
 	padding: 6rem 0;
