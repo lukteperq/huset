@@ -73,7 +73,7 @@ html {
 }
 *,
 *:before,
-*:after { 
+*:after {
 	box-sizing:         border-box;
 }
 body {
@@ -968,8 +968,18 @@ input[type="search"] { /* lager en dropdown til søkefeltet, når jeg trykker p�
 .widget-title {
 	margin-bottom: 1em;
 	font-size: 24px;
-	font-size: 2.4rem;
+	font-size: 1.8rem; /*opr 2.4*/
 	border-bottom: 2px solid #000;
+}
+/*spesifikt for ultimate icons widget */
+#sfsi-widget-2 .widget-title, #jr_insta_slider-2 .widget-title{
+	border-bottom:none;
+}
+#sfsi-widget-2{
+	margin-bottom:0 !important;
+}
+.sfsi_wDiv{/*lager den mer sentrert, ultimate icons*/
+	margin-left:40px;
 }
 
 .widget a {
