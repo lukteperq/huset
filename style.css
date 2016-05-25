@@ -1111,8 +1111,8 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 }
 
 #page .entry-title { /*lagt til pga klæsh med arvet .entry-title fra ^ endret til ID fra class pga bug s*/
-	/*margin-top: .7em;*/
-	margin-top: 60px;
+	margin-top: .1em;
+	/*margin-top: 60px;*/
 }
 .entry-content a {
 	text-decoration: underline;
