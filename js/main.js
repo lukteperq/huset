@@ -26,4 +26,7 @@ jQuery(document).ready(function($){
     $('.wpcf7-checkbox').each(function(key){
         $(this).attr('title', tooltips[key]);
     });
+
+/* Instagram follow knapp */
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//x.instagramfollowbutton.com/follow.js";s.parentNode.insertBefore(g,s);}(document,"script"));
 });//onready
