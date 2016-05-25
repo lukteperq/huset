@@ -1101,7 +1101,7 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 --------------------------------------------------------------*/
 /* Typography */
 .entry-title {
-	margin: 0 0 2rem;
+	margin: 40px 0 2rem;
 	font-weight: 900;
 	font-size: 40px;
 	font-size: 4rem;
@@ -1110,9 +1110,13 @@ Hør med dem andre om det kun er min browesr som til tider bugger seg TODO
 	color: hsl(0, 0%, 0%);
 }
 
-#page .entry-title { /*lagt til pga klæsh med arvet .entry-title fra ^ endret til ID fra class pga bug s*/
-	margin-top: .1em;
-	/*margin-top: 60px;*/
+.entry-title { /*lagt til pga klæsh med arvet .entry-title fra ^ endret til ID fra class pga bug s*/
+	/*margin-top: .1em;*/
+	/*margin-top: 40px;*/
+}
+.single .entry-title { /*lagt til pga klæsh med arvet .entry-title fra ^ endret til ID fra class pga bug s*/
+	/*margin-top: .1em;*/
+	margin-top: 0;
 }
 .entry-content a {
 	text-decoration: underline;
