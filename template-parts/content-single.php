@@ -9,8 +9,8 @@
 	<header class="entry-header">
     <?php if (has_post_thumbnail()) { ?>
         <div class="single-post-thumbnail clear">
-          <div class="index-box>
-              <?= the_post_thumbnail('large-thumb') ?>
+          <div class="index-box">
+              <?php the_post_thumbnail('large-thumb') ?>
           </div>
         </div>
     <?php }
