@@ -89,9 +89,20 @@ function huset_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+    
+    add_theme_support( 'custom-logo', array(
+       'height'      => 175,
+       'width'       => 400,
+       'flex-width' => true,
+    ) );
+    
+    add_theme_support( 'custom-logo', array(
+       'header-text' => array( 'site-title', 'site-description' ),
+    ) );
 }
 endif;
 add_action( 'after_setup_theme', 'huset_setup' );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

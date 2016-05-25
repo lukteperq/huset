@@ -16,9 +16,6 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php wp_head(); ?>
-	<style>
-		body.custom-background { background-image: none !important; }
-	</style>
 
 </head>
 
@@ -42,7 +39,7 @@
 		}
 		?>
 		<div class="title-box">
-			<h1 class="site-title" style="background-image: url(<?= get_background_image() ?>)"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><?= the_custom_logo() ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 </div>
